@@ -1,0 +1,17 @@
+<!--pages/edit/edit.wxml-->
+<view class="container">
+<form bindsubmit="formSubmit" bindreset="formReset">
+<view class="row">
+<text>名称：</text>
+<input type="text" name="distName" placeholder="请输入名称"  value="{{dist.distName}}"/>
+</view>
+<view class="row">
+<text>地区：</text>
+<input type="text" name="region" placeholder="请输入地区"  value="{{dist.region}}"/>
+</view>
+<view class="btn-area">
+        <button type="primary" form-type="submit">Submit</button>
+        <button form-type="reset" >Reset</button>
+</view>
+</form>
+</view>

@@ -1,0 +1,35 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/logs/logs",
+    "pages/list/list",
+    "pages/edit/edit",
+    "pages/useredit/useredit",
+    "pages/userlist/userlist"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "Weixin",
+    "navigationBarTextStyle":"black"
+  },
+    "tabBar": {
+      "color": "#000000",
+      "selectedColor": "#000000",
+      "borderStyle": "black",
+      "list": [{
+        "pagePath":  "pages/index/index",
+        "text": "Index"
+      },
+      {
+        "pagePath":  "pages/list/list",
+        "text": "Dist"
+      },
+      {
+        "pagePath":  "pages/userlist/userlist",
+        "text": "User"
+      }]
+    },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}

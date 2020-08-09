@@ -1,0 +1,27 @@
+<!--pages/userlist/userlist.wxml-->
+<view class="container">
+	<view class="widget">
+		<text class="column">ID</text>
+		<text class="column">Name</text>
+		<text class="column">Age</text>
+    <text class="column">Email</text>
+		<text class="link-column">Operation</text>
+	</view>
+	<scroll-view scroll-y="true">
+		<view>
+			<block wx:for="{{users}}">
+				<view class="widget">
+					<text class="column">{{item.id}}</text>
+					<text class="column">{{item.name}}</text>
+					<text class="column">{{item.age}}</text>
+					<text class="column">{{item.email}}</text>
+					<view class="link-column">
+						<navigator class="link" url="../useredit/useredit?id={{item.id}}">编辑</navigator>|
+						<text class="link" bindtap="deleteUser" data-id="{{item.id}}" data-name="{{item.name}}" data-index="{{index}}">删除</text>
+					</view>
+				</view>
+			</block>
+		</view>
+	</scroll-view>
+	<button type="primary" bindtap="addUser">添加信息</button>
+</view>

@@ -1,0 +1,27 @@
+<!--pages/list/list.wxml-->
+<view class="container">
+	<view class="widget">
+		<text class="column">ID</text>
+		<text class="column">Name</text>
+		<text class="column">Region</text>
+		<text class="column">Input Name</text>
+		<text class="link-column">Operation</text>
+	</view>
+	<scroll-view scroll-y="true">
+		<view>
+			<block wx:for="{{dists}}">
+				<view class="widget">
+					<text class="column">{{item.id}}</text>
+					<text class="column">{{item.dist_name}}</text>
+					<text class="column">{{item.region}}</text>
+					<text class="column">{{item.input_name}}</text>
+					<view class="link-column">
+						<navigator class="link" url="../edit/edit?id={{item.id}}">编辑</navigator>|
+						<text class="link" bindtap="deleteDist" data-id="{{item.id}}" data-name="{{item.dist_name}}" data-index="{{index}}">删除</text>
+					</view>
+				</view>
+			</block>
+		</view>
+	</scroll-view>
+	<button type="primary" bindtap="addDist">添加信息</button>
+</view>

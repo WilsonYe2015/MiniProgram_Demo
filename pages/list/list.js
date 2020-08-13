@@ -33,8 +33,8 @@ wx.request({
   method:'GET',
   data:{},
   success:function(res){
-    var list = res.data;
-    if (list == null)
+    var data = res.data;
+    if (!data.success)
     {
       var toastText='获取数据失败';
       wx.showToast({
@@ -44,7 +44,7 @@ wx.request({
       });
     }else{
       that.setData({
-        dists:list
+        dists:data.result
         })
     }
   }
@@ -105,7 +105,7 @@ wx.request({
             data:{"id":e.target.dataset.id},
             method:'GET',
             success:function(res){
-              var result =res.data;
+              var result =res.data.success;
               var toastText ="Delete successful";
               if (!result) {
                 toastText="Delete Failure";

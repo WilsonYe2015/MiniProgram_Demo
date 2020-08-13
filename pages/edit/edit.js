@@ -27,8 +27,8 @@ Page({
       method: 'GET',
       success:function(res){
         var data = res.data;
-        if (data!=null) {
-          that.setData({dist:data})
+        if (data.success) {
+          that.setData({dist:data.result})
         }else
         {
           var toastText='获取数据失败';
@@ -107,7 +107,7 @@ Page({
      header: {
       'Content-Type': 'application/json'
     },success:function (res) {
-       var result = res.data
+       var result = res.data.success
        var toastText ="操作成功！";
        if (!result) {
          toastText="操作失败！";

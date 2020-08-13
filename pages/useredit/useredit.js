@@ -27,8 +27,8 @@ Page({
       method: 'GET',
       success:function(res){
         var data = res.data;
-        if (data!=null) {
-          that.setData({user:data})
+        if (data.success) {
+          that.setData({user:data.result})
         }else
         {
           var toastText='获取数据失败';
@@ -108,7 +108,7 @@ Page({
     },success:function (res) {
        var result = res.data
        var toastText ="操作成功！";
-       if (!result) {
+       if (!result.success) {
          toastText="操作失败！";
        } 
        wx.showToast({
